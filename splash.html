@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Import external css here-->
+  <link rel="stylesheet" href="css/splash.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="images-and-videos/titleIcon.ico">
+  <title>Splash Screen | Good health and well-being</title>
+</head>
+
+<body>
+
+  <!-- main container -->
+  <div class="splash-screen">
+    <!-- container for background -->
+    <div class="black-background"></div>
+    <!-- container for mission -->
+    <div class="mission">
+      <h1 style="margin-inline: 100px;">"Our overarching goal is to collaboratively create a healthier and happier
+        future for generations to come through sustainable development initiatives."
+      </h1>
+    </div>
+    <!-- container for logo -->
+    <div class="logo-container" id="logo1">
+      <img id="img1" src="images-and-videos/logo1.png" alt="Sustainable Development Goals Logo">
+    </div>
+    <div class="logo-container" id="logo2">
+      <img id="img2" src="images-and-videos/logo2.png" alt="Good health well-being logo">
+    </div>
+    <!-- container for team info -->
+    <div class="team-info">
+      <h1>Team work by</h1>
+      <p>Kavintha Dinushan</p>
+      <p>Damindu Ranaraja</p>
+      <p>Isum Perera</p>
+      <p>Sansidu Ranasinghe</p>
+    </div>
+  </div>
+  <div id="page-loader">
+    <!-- Loader Icon -->
+    <div class="loader"></div>
+  </div>
+
+  <script>
+    const totalAnimationTime = 10000; // Time in milliseconds for splash screen
+
+    setTimeout(() => {
+      // Show the page loader
+      document.getElementById('page-loader').style.display = 'flex';
+
+      // Wait with the loader visible before redirecting
+      setTimeout(() => {
+        window.location.href = 'splash.html'; // Change to your next page's URL
+      }, 2000); // Adjust the loader display time as needed
+    }, totalAnimationTime);
+  </script>
+
+
+</body>
+
+</html>

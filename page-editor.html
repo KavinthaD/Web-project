@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images-and-videos/titleIcon.ico">
+    <title>Page-editor</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            font-family: Arial;
+            margin-inline: 80px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Reduced opacity */
+            color: white;
+            padding: 20px;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+
+        .bottom-link,
+        .home-link {
+            color: rgb(99, 255, 99);
+        }
+
+        .text {
+            margin-inline: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay muted loop id="video-background">
+        <source src="images-and-videos/page-editor-background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <h1>
+            Page Editor
+        </h1>
+        <hr>
+        <p>Name: D.M.D.K.Dinushan</p>
+        <p>Role: Student 1</p>
+        <p>The following pages were edited by me.</p>
+        <hr>
+
+
+        <a href="#bottom" class="bottom-link">Jump to Bottom</a>
+        <div class="text">
+            <br>
+            <h3>Splash</h3>
+            <p>Created Splash screen using css to animate and javascript to link the home page</p>
+            <p>Link to Splash Screen <a href="splash.html"></a></p>
+
+            <br>
+            <h3>Shop</h3>
+            <p>Created shop and placed products in card style, and placed A-Z and default product sort and used
+                javascript
+                to add them functionality.</p>
+            <p>Link to Shop<a href="shop.html"></a></p>
+
+            <br>
+            <h3>Cart</h3>
+            <p>Inside shop created cart to add products from shop, here there's a quanitity selector and prices will
+                show
+                accordingly. And checkout option shows summary of products and total price and ask user to enetr card
+                details.</p>
+            <p>link to <a></a></p>
+
+            <br>
+            <h3>Content page</h3>
+            <p>Created content page about workout and explained how it benefits mentally and physicallyiwth youtube
+                video links </p>
+            <p>Link to content page<a></a></p>
+
+            <br>
+            <h3>Main</h3>
+            <p>For the whole web page we worked together to finalize how overrall website should look like and designed
+                logo and created a mission together</p>
+            <p><a></a></p>
+            <a href="home.html" class="home-link">Back to homepage</a>
+        </div>
+    </div>
+    <div id="bottom">
+
+    </div>
+
+</body>
+
+</html>

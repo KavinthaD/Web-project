@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Link to external CSS files for header, shop, and footer styles -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/shop.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="images-and-videos/titleIcon.ico">
+  <title>Shop | Good health and well-being</title>
+</head>
+
+<body>
+  <!-- Container for the navigation bar -->
+  <div class="navbarcontainer">
+    <header class="navBar">
+      <!-- Container for the logo and the title -->
+      <div class="logo-title-container">
+        <img src="images-and-videos/logoH.png" class="Logo" alt="Logo">
+        <h2>Good Health And Well-Being</h2>
+      </div>
+      <!-- Container for the navigation buttons -->
+      <div class="nav-buttons">
+        <button id="home">Home</button>
+        <button id="gallery">Gallery</button>
+        <button id="shop">Shop</button>
+        <button id="team">Team</button>
+        <button style="margin-right: 20px; position: relative;" id="cart">
+          <img src="images-and-videos/cart.png" alt="cart">
+          <span id="cart-count" class="cart-count">0</span>
+        </button>
+        <!-- Button to display the menu in smaller windows -->
+        <button id="Menu">
+          <img class="Logo2" src="images-and-videos/menu.png" alt="menu">
+          <!-- Small Window Container -->
+
+        </button>
+
+      </div>
+      <div id="smallWindow" class="small-window">
+        <button id="userProfile">User Profile</button>
+        <button id="feedback">Feedback</button>
+      </div>
+    </header>
+  </div>
+
+  <!-- Subheading for the shop section -->
+  <div class="sub_heading">
+    <h2> Shop </h2>
+
+    <!-- Buttons for sorting the shop items -->
+    <button id="AtoZ">A-Z</button>
+    <button id="default">Default</button>
+  </div>
+
+  <!-- Container for all the product cards -->
+  <div class="product-container">
+
+    <div class="product-card">
+      <img src="images-and-videos/f_tracker.jpg" alt="Fitness Tracker">
+      <h2>Fitness tracker</h2>
+      <p>Rs. 15000</p>
+      <button class="description-btn" onclick="toggleDescription(this)">Description</button>
+      <button id="addToCart1">Add to cart</button>
+      <div class="description-text" style="display: none;">
+        <p>Maximize your workout efficiency with our sleek fitness tracker! Monitor heart rate, steps, and sleep
+          patterns to achieve your health goals effortlessly
+        </p>
+        <button class="back-btn" onclick="toggleDescription(this, true)">Back</button>
+
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images-and-videos/tshirt.jpg" alt="Fitness Tracker">
+      <h2>Plain green t-shirt</h2>
+      <p>Rs. 5000</p>
+      <button class="description-btn" onclick="toggleDescription(this)">Description</button>
+      <button id="addToCart2">Add to cart</button>
+      <div class="description-text" style="display: none;">
+        <p>Stay cool and comfortable during workouts with our fitness breathable t-shirt. Crafted for performance, it
+          offers breathability and comfort for your active lifestyle. Get yours today!
+        </p>
+        <button class="back-btn" onclick="toggleDescription(this, true)">Back</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images-and-videos/shaker.jpg" alt="Fitness Tracker">
+      <h2>Shaker</h2>
+      <p>Rs. 4000</p>
+      <button class="description-btn" onclick="toggleDescription(this)">Description</button>
+      <button id="addToCart3">Add to cart</button>
+      <div class="description-text" style="display: none;">
+        <p>Convenient sport shaker for mixing protein shakes and supplements. Leak-proof design with a secure lid, ideal
+          for gym sessions and active lifestyles.
+        </p>
+        <button class="back-btn" onclick="toggleDescription(this, true)">Back</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images-and-videos/snack.jpg" alt="Fitness Tracker">
+      <h2>Nuts and seeds snack</h2>
+      <p>Rs. 500</p>
+      <button class="description-btn" onclick="toggleDescription(this)">Description</button>
+      <button id="addToCart4">Add to cart</button>
+      <div class="description-text" style="display: none;">
+        <p>Nutrient-packed snack packet with a delightful blend of nuts and seeds. Perfect for on-the-go energy and a
+          satisfying crunch anytime, anywhere.
+        </p>
+        <button class="back-btn" onclick="toggleDescription(this, true)">Back</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images-and-videos/avocado.jpg" alt="Fitness Tracker">
+      <h2>Avocado smoothie</h2>
+      <p>Rs. 700</p>
+      <button class="description-btn" onclick="toggleDescription(this)">Description</button>
+      <button id="addToCart5">Add to cart</button>
+      <div class="description-text" style="display: none;">
+        <p>Maximize your workout efficiency with our sleek fitness tracker! Monitor heart rate, steps, and sleep
+          patterns to achieve your health goals effortlessly
+        </p>
+        <button class="back-btn" onclick="toggleDescription(this, true)">Back</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images-and-videos/dumbbell.jpeg" alt="Fitness Tracker">
+      <h2>5kg Dumbbell</h2>
+      <p>Rs. 5000</p>
+      <button class="description-btn" onclick="toggleDescription(this)">Description</button>
+      <button id="addToCart6">Add to cart</button>
+      <div class="description-text" style="display: none;">
+        <p>5kg dumbbell for strength training at home or the gym. Ergonomic grip, durable construction, ideal for
+          various exercises targeting arms, shoulders, and more.
+        </p>
+        <button class="back-btn" onclick="toggleDescription(this, true)">Back</button>
+      </div>
+    </div>
+  </div>
+  <!-- The Modal -->
+  <!-- Add some more structure to the cart items -->
+  <div id="cartModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>My Cart</h2>
+      <div id="cartItemsContainer">
+        <!-- products will be added here -->
+      </div>
+      <div class="cart-summary">
+        <span id="itemCount">0 Items</span>
+        <span>Total: Rs. <span id="cartTotalPrice">0</span></span>
+      </div>
+      <button id="checkoutButton">Checkout</button>
+    </div>
+  </div>
+
+  <div id="checkoutModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Checkout</h2>
+      <!-- Payment information form (simplified for demonstration) -->
+      <form id="paymentForm">
+        <div class="form">
+          <div class="labels">
+            <label>Card Holder's name :</label>
+            <label>Card Number :</label>
+            <label>Expiry date :</label>
+            <label>CVV :</label>
+          </div>
+          <div class="placeholders">
+            <input id="nametextbox" type="text" placeholder="Name on Card" required><br>
+            <input id="numtextbox" type="number" placeholder="Card Number" required><br>
+            <input id="monthetextbox" type="text" placeholder="MM/YY" required maxlength="5"><br>
+            <input id="cvvtextbox" type="text" placeholder="CVV" required maxlength="3"><br>
+          </div>
+        </div>
+
+        <!-- More fields can be added as needed -->
+      </form>
+      <div id="checkoutSummary">
+        <!-- Summary and total price will be populated by JavaScript -->
+        <div id="checkoutTotalprice">
+
+        </div>
+      </div>
+      <button id="confirmCheckout"
+        style="width: 100%; padding: 10px; border-radius: 5px; font-weight: bold; background-color: #4CAF50; color: white; margin-top: 20px; cursor: pointer;">Confirm
+        Order</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Hub</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Content</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>for You</h4>
+          <ul>
+            <li><a href="#">Page editors</a></li>
+            <li><a href="#">Splash</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Site map</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <div class="image-circle">
+              <img id="fb" src="images-and-videos/fb-icon.png" alt="facebook">
+            </div>
+            <div class="image-circle">
+              <img id="insta" src="images-and-videos/insta-icon.png" alt="insta">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Link to the external JavaScript file for shop functionalities -->
+  <script src="js/shop.js"></script>
+  <!-- Inline JavaScript for navigationbar interactivity -->
+  <script>
+
+    document.getElementById("Menu").addEventListener("click", function (event) {
+      var window = document.getElementById("smallWindow");
+      window.classList.toggle("show-small-window");
+      event.stopPropagation();
+    });
+
+    window.addEventListener('click', function (event) {
+      if (!event.target.matches('#Menu, #Menu *')) {
+        var dropdowns = document.getElementById("smallWindow");
+        dropdowns.classList.remove("show-small-window");
+      }
+    });
+
+    // Updated to stop propagation on clicks within the small window
+    document.getElementById("smallWindow").addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+
+
+
+
+    window.onload = function () {
+      // Extract the filename from the URL path
+      var currentPage = window.location.pathname.split('/').pop();
+
+      // Determine the button ID based on the filename
+      var buttonId = "";
+      switch (currentPage) {
+        case "home.html":
+          buttonId = "home";
+          break;
+        case "gallery.html":
+          buttonId = "gallery";
+          break;
+        case "shop.html":
+          buttonId = "shop";
+          break;
+        case "team.html":
+          buttonId = "team";
+          break;
+        // Add cases for other HTML files as needed
+
+      }
+
+      // Set the corresponding button to active
+      if (buttonId) {
+        var activeButton = document.getElementById(buttonId);
+        if (activeButton) {
+          activeButton.classList.add("active");
+          // You might want to remove 'active' class from other buttons first
+          // This can be done by removing the 'active' class from all buttons
+          // And then adding it back only to the activeButton as shown above
+        }
+      }
+    };
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+body{
+    margin: 0;
+}
+.navBar {
+    z-index: 1000;
+display: flex;
+align-items: center; /* This will vertically center align items */
+justify-content: space-between; /* This spaces out the logo-title container and the button group */
+background-color: #BFFFBA;
+height: 90px;
+position: fixed;
+width: 100%;
+left: 0;
+}
+
+.logo-title-container, .nav-buttons {
+display: flex;
+align-items: center; /* Ensures items within these containers are also centrally aligned */
+}
+
+.nav-buttons button {
+font-weight: bold;
+background-color: transparent;
+border-radius: 15px;
+padding: 10px;
+border: 0;
+margin-left: 50px; /* Adds some space between the buttons */
+}
+
+.nav-buttons button:hover {
+background-color: white;
+}
+.nav-buttons button:focus {
+background-color: #55b25b;
+}
+
+/* If you want the logo and title to be more compact */
+.logo-title-container img {
+margin-right: 10px; /* Adjust spacing between logo and title */
+}
+
+h2 {
+font-family: Arial;
+margin: 0; /* Removes default margin to prevent unnecessary space */
+}
+
+.Logo{
+margin-left: 15px;
+max-height: 70px; /* Adjusts the height to fit within the navbar, leaving some space */
+width: auto; /* Maintains aspect ratio */
+padding-left: 10px;
+}
+#Menu{
+margin-left: 50px;
+margin-right: 10px;
+}
+
+#home.active {
+background-color: #58ec03; /* Same as your focus style */
+}
+.Logo2{
+max-height: 50px; /* Adjusts the height to fit within the navbar, leaving some space */
+width: auto; /* Maintains aspect ratio */
+
+}
+#cart{
+padding: 0;
+padding-left: 7px;
+padding-right: 20px;
+}
+#cart img {
+width: 30px;
+height: 30px;
+border: none;
+}
+.cart-count {
+top: 7px;
+right:2px;
+position: absolute;
+background-color: rgb(17, 88, 17);
+color: white; 
+border-radius: 50%; 
+padding: 2px 5px;
+}
+#Menu {
+padding: 1px; /* Reduced padding to make the button smaller */
+margin-right: 15px; /* Optional: adjust as needed to align with your design */
+}
+
+.Logo2 {
+max-height: 30px; /* Adjusts the height to make the image within the button smaller */
+width: auto; /* Maintains aspect ratio */
+}
+.small-window {
+visibility: hidden; /* Replace display: none; with visibility */
+opacity: 0; /* Start fully transparent */
+position: fixed;
+top: 0;
+right: -100%;
+background-color: #f9f9f9;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1001;
+width: 90px;
+padding-bottom: 15px;
+}
+
+.show-small-window {
+visibility: visible; /* Make it visible before animating */
+opacity: 1;
+animation: slideInFromRight 0.5s forwards;
+}
+
+
+
+.small-window button {
+display: block; /* Stack buttons vertically */
+width: 100%;
+padding: 10px;
+border: none;
+background-color: #fff;
+text-align: left;
+margin-bottom: 5px; /* Space between buttons */
+cursor: pointer;
+}
+
+.small-window button:last-child {
+margin-bottom: 0; /* Remove bottom margin for the last button */
+}
+
+.small-window button:hover {
+background-color: #BFFFBA;
+}
+.small-window button:active{
+background-color:#55b25b;
+}
+@keyframes slideInFromRight {
+from {
+right: -8%; /* Adjusted from -100% to -50% */
+opacity: 0;
+}
+to {
+right: 0;
+opacity: 1;
+}
+}
+.nav-buttons button.active {
+background-color: #55b25b; /* Example active style */
+}
+.navbarcontainer{
+    padding-bottom: 90px;
+}

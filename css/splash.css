@@ -1,0 +1,199 @@
+body, html {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+margin: 0;
+padding: 0;
+height: 100%;
+background-color: #0fa958; /* Use the background color of the uploaded image */
+}
+
+.splash-screen {
+position: relative;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+text-align: center;
+color: white; /* Assuming the text color is white */
+background-color: black;
+}
+
+.splash-screen > *:not(.black-background) {
+opacity: 0;
+transition: opacity 2s ease; /* Transition for when we change the opacity */
+}
+
+.splash-screen::after {
+content: '';
+position: absolute;
+top: 50%; /* Adjust based on logo2's position */
+left: 50%; /* Centering the circle on the page - adjust if logo2 is off-center */
+background: radial-gradient(circle at center, #54b375 50%, transparent 50%);
+transform: translate(-50%, -50%) scale(0); /* Start scaled down to 0 */
+width: 100%; /* Ensure it can cover the whole screen */
+height: 100%;
+z-index: 0; /* Under content but above the black background */
+animation: revealGreenBackground 10s forwards ease-out 3s; /* Delay of 3s, then animate */
+}
+
+/* Black background full coverage */
+.black-background {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: black;
+z-index: 1; /* Ensure it's above other content */
+/*animation: fadeOutBackground 5s ease forwards; /* Animation to fade out */
+}
+
+.logo-container{
+opacity: 0;
+z-index: 2; /* Above the black background */
+position: relative; /* Adjust if needed for layout */
+}
+
+@keyframes revealGreenBackground {
+0% {
+transform: translate(-50%, -50%) scale(0);
+}
+100% {
+transform: translate(-50%, -50%) scale(50); /* Scale up to ensure it covers the screen */
+}
+}
+
+/* Animation to fade out the black background */
+@keyframes fadeOutBackground {
+to {
+opacity: 0;
+visibility: hidden;
+}
+}
+
+/* After the black background fades, show the content */
+@keyframes fadeIn {
+to {
+opacity: 1;
+}
+}
+
+@keyframes revealMissionLeftToRight {
+from {
+clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+}
+to {
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+}
+
+#logo1{
+animation: fadeIn 2s ease forwards;
+animation-delay: 1s; /* Start the fade-in after a delay */
+}
+
+#logo2{
+animation: fadeIn 2s ease forwards;
+animation-delay: 2s; /* Start the fade-in after a delay */
+}
+
+.black-background{
+animation: fadeOutBackground 4s ease forwards;
+}
+
+.team-info{
+animation: fadeIn 2s ease forwards;
+animation-delay: 3.5s; /* Start the fade-in after a delay */
+}
+#logo1{
+background-color: black;
+height: 200px;
+width: 400px;
+margin-bottom: 20px; /* Adjust as needed */
+position: relative; /* Add this line if using position absolute for the image */
+}
+
+#img1 {
+width: 100%; /* Adjust the size as needed */
+height: auto;
+position: absolute;
+left: -15px;
+}
+
+.team-info p {
+
+margin: 5px 0; /* Small vertical space between text lines */
+font-size: 1.2em; /* Adjust the font size as needed */
+}
+
+#logo2 {
+position: absolute;
+top: 57%;
+left: 50%;
+transform: translate(-50%, -50%); /* This centers the #logo2 horizontally relative to its current position */
+z-index: 2; /* This ensures that #logo2 stacks on top of #logo1 */
+}
+
+#img2 {
+height: 130px;
+width: 130px;
+/* If you need to adjust the positioning further, you can use top/right/bottom/left properties here */
+}
+
+.team-info{
+position: relative;
+margin-top: 100px; /* Adjust this value to move .team-info down */
+z-index: 1;
+}
+.mission{
+position: relative;
+width: 100%;
+/* Prevents content from being visible outside the clip-path during animation */
+margin-inline: 100px;
+margin-bottom: 30px;
+opacity: 0; /* Start with .mission hidden */
+
+animation: fadeIn 0s ease forwards, revealMissionLeftToRight 3s ease forwards;
+animation-delay: 5s;
+
+z-index: 10;
+}
+
+@keyframes slideUp {
+to {
+transform: translateY(-100vh); /* Slide out of view */
+opacity: 0; /* Fade out for smoother transition */
+}
+}
+
+.splash-screen.slide-up {
+animation: slideUp 1s ease forwards;
+}
+
+.loader {
+border: 16px solid #f3f3f3; /* Light grey background */
+border-top: 16px solid #25b618; /* Blue color */
+border-radius: 50%;
+width: 120px;
+height: 120px;
+animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+#page-loader {
+display: none; /* Initially hidden */
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent white */
+z-index: 100;
+justify-content: center;
+align-items: center;
+}

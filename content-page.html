@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images-and-videos/titleIcon.ico">
+    <title>Workout | Good health and well-being</title>
+    <style>
+        body {
+
+            background-color: #daf1e2;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        p {
+            text-align: center;
+        }
+
+        .main-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .main-container p {
+            font-size: 20px;
+        }
+
+        .text {
+            margin: 120px 0 50px 50px;
+            padding-inline: 30px;
+            border-radius: 30px;
+            background-color: white;
+            flex-wrap: wrap;
+            display: flex;
+            /* Use flexbox layout */
+            flex-direction: column;
+            /* Stack flex items vertically */
+            justify-content: center;
+            /* Center flex items vertically */
+            font-size: 25px;
+        }
+
+        .text h1 {
+            margin: 0px;
+        }
+
+        .text,
+        .image-container {
+
+            /* Ensures that both the text and image are aligned properly */
+            float: left;
+            /* Keeps text on the left */
+            width: 50%;
+            /* Adjust this value as needed to fit the text and image side by side */
+        }
+
+        .image-container {
+            width: 41%;
+            float: right;
+        }
+
+        @media(max-width:1920px) {
+
+            .text {
+                max-height: 500px;
+            }
+
+            .text,
+            .image-container {
+                width: 53%;
+            }
+
+            .image-container {
+                width: 35%;
+            }
+
+            .main-container p {
+                font-size: 18px;
+            }
+        }
+
+        .image-container img {
+            float: right;
+            /* Aligns the image to the right side of its container */
+            height: auto;
+            width: 100%
+                /* Makes the image fill the container. Adjust as necessary. */
+        }
+
+        .text .button-container {
+            display: flex;
+            justify-content: center;
+            /* This centers the buttons in the container */
+            gap: 10px;
+            /* This adds some space between the buttons */
+        }
+
+        .button-container .button a:hover {
+            opacity: 0.7;
+            /* Reduce opacity on hover */
+        }
+
+
+        .text a {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #06142b;
+            cursor: pointer;
+            border: 1px solid #8994a5;
+            border-radius: 20px;
+            background: #c2c8d2;
+            text-decoration: none;
+        }
+
+        .textcard-container1 {
+            background-color: #c2c8d2;
+            padding: 40px 40px 50px 40px;
+        }
+
+        .textcard-container2 {
+            background-color: #daf1e2;
+            padding: 40px;
+        }
+
+        .textcard-container3 {
+            background-color: #c2c8d2;
+            padding: 40px;
+        }
+
+        .textcard-container>h1 {
+            margin-top: 20px;
+        }
+
+        .text-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            /* Cards take equal space but don’t shrink below 200px */
+            margin: 10px;
+            background-color: #f4f4f4;
+            /* Light grey background */
+            padding: 20px;
+            border-radius: 8px;
+            /* Rounded corners for aesthetics */
+            box-shadow: 0 2px 4px rgb(33 53 55 / 56%);
+            text-align: center;
+            margin: 15px;
+        }
+
+        #physical h2,
+        #zz h2 {
+            color: #9e81a1;
+        }
+
+        #mental h2 {
+            color: #6d9786;
+        }
+
+        .card p {
+            margin-top: 10px;
+        }
+
+        .video {
+            text-align: center;
+        }
+
+        .video iframe {
+            width: 50%;
+            border-radius: 10px;
+        }
+
+        @media(min-width:1600px) {
+            .video iframe {
+                width: 37%;
+            }
+        }
+
+        .navbarcontainer {
+            padding-bottom: 90px;
+        }
+    </style>
+    <!-- External CSS for the header and footer of the page -->
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <!-- Container for the navigation bar -->
+    <div class="navbarcontainer">
+        <header class="navBar">
+            <!-- Container for the logo and the title -->
+            <div class="logo-title-container">
+                <img src="images-and-videos/logoH.png" class="Logo" alt="Logo">
+                <h2>Good Health And Well-Being</h2>
+            </div>
+            <!-- Container for the navigation buttons -->
+            <div class="nav-buttons">
+                <button id="home">Home</button>
+                <button id="gallery">Gallery</button>
+                <button id="shop">Shop</button>
+                <button id="team">Team</button>
+                <button style="margin-right: 20px; position: relative;" id="cart">
+                    <img src="images-and-videos/cart.png" alt="cart">
+                    <span id="cart-count" class="cart-count">0</span>
+                </button>
+                <!-- Button to display the menu in smaller windows -->
+                <button id="Menu">
+                    <img class="Logo2" src="images-and-videos/menu.png" alt="menu">
+                    <!-- Small Window Container -->
+
+                </button>
+
+            </div>
+            <div id="smallWindow" class="small-window">
+                <button id="userProfile">User Profile</button>
+                <button id="feedback">Feedback</button>
+            </div>
+        </header>
+    </div>
+    <div class="main-container">
+        <div class="text">
+            <h1>Workout</h1>
+            <p>Regular workouts are essential for sustaining both physical and mental health, offering numerous
+                benefits.
+                Physically, they improve cardiovascular health, aid in weight management, enhance muscular strength, and
+                bolster bone density, helping to mitigate chronic disease risks. </p>
+            <p>Mentally, exercise releases endorphins that reduce stress, alleviate symptoms of depression and anxiety,
+                and
+                boost overall mood. It also enhances cognitive functions, leading to better productivity and focus.
+                Furthermore, engaging in regular physical activity improves sleep quality, increases energy levels, and
+                can
+                significantly extend life expectancy. Incorporating workouts into daily routines fosters a sense of
+                discipline and can improve personal relationships by boosting self-esteem and confidence.</p>
+            <div class="button-container">
+                <div class="button"><a href="#physical">Physical Benefits</a></div>
+                <div class="button"><a href="#mental">Mental Benefits</a></div>
+
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="images-and-videos/workout.jpeg" alt="Workout">
+        </div>
+    </div>
+    <div class="textcard-container1">
+        <div id="physical" style="padding: 10px 0px;">
+            <h1>Physical Benefits</h1>
+            <div class="text-cards">
+
+                <div class="card">
+                    <h2>Cardiovascular Health</h2>
+                    <p> Enhances heart function and circulation, reducing the risk of heart disease.</p>
+                </div>
+                <div class="card">
+                    <h2>Weight Management</h2>
+                    <p> Helps burn calories and fat, aiding in maintaining or achieving a healthy weight.</p>
+                </div>
+                <div class="card">
+                    <h2>Muscular Strength</h2>
+                    <p> Builds and maintains muscle strength and endurance, contributing to a stronger physique.</p>
+                </div>
+            </div>
+            <div class="video">
+                <iframe style="border:0px;" width="560" height="315"
+                    src="https://www.youtube.com/embed/wWGulLAa0O0?si=2l7omWdbf53ALSbh" title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="textcard-container2">
+        <div id="mental" style="padding: 10px 0px;">
+            <h1>Mental Benefits</h1>
+            <div class="text-cards">
+                <div class="card">
+                    <h2>Stress Reduction</h2>
+                    <p> Releases endorphins that act as natural stress relievers.</p>
+                </div>
+                <div class="card">
+                    <h2>Mental Health Improvement</h2>
+                    <p> Alleviates symptoms of depression and anxiety, enhancing overall mental well-being.</p>
+                </div>
+                <div class="card">
+                    <h2>Sleep Quality</h2>
+                    <p> Promotes better sleep patterns and can help with insomnia.</p>
+                </div>
+            </div>
+            <div class="video">
+                <iframe style="border:0px;" width="560" height="315"
+                    src="https://www.youtube.com/embed/IHmGL6-T2jQ?si=HTHdByB7iiWkcxjs" title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Hub</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Content</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Shop</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>for You</h4>
+                    <ul>
+                        <li><a href="#">Page editors</a></li>
+                        <li><a href="#">Splash</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Site map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <div class="image-circle">
+                            <img id="fb" src="images-and-videos/fb-icon.png" alt="facebook">
+                        </div>
+                        <div class="image-circle">
+                            <img id="insta" src="images-and-videos/insta-icon.png" alt="insta">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+        document.getElementById("Menu").addEventListener("click", function (event) {
+            var window = document.getElementById("smallWindow");
+            window.classList.toggle("show-small-window");
+            event.stopPropagation();
+        });
+
+        window.addEventListener('click', function (event) {
+            if (!event.target.matches('#Menu, #Menu *')) {
+                var dropdowns = document.getElementById("smallWindow");
+                dropdowns.classList.remove("show-small-window");
+            }
+        });
+
+        // Updated to stop propagation on clicks within the small window
+        document.getElementById("smallWindow").addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
+
+
+
+
+        window.onload = function () {
+            // Extract the filename from the URL path
+            var currentPage = window.location.pathname.split('/').pop();
+
+            // Determine the button ID based on the filename
+            var buttonId = "";
+            switch (currentPage) {
+                case "home.html":
+                    buttonId = "home";
+                    break;
+                case "gallery.html":
+                    buttonId = "gallery";
+                    break;
+                case "shop.html":
+                    buttonId = "shop";
+                    break;
+                case "team.html":
+                    buttonId = "team";
+                    break;
+                // Add cases for other HTML files as needed
+
+            }
+
+            // Set the corresponding button to active
+            if (buttonId) {
+                var activeButton = document.getElementById(buttonId);
+                if (activeButton) {
+                    activeButton.classList.add("active");
+                    // You might want to remove 'active' class from other buttons first
+                    // This can be done by removing the 'active' class from all buttons
+                    // And then adding it back only to the activeButton as shown above
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>
